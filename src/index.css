@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+/* Customize scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37; /* Gold */
+  border-radius: 4px;
+}
+
+/* Gold accents for buttons and shadows */
+.shadow-gold {
+  box-shadow: 0 4px 20px #FFD70055;
+}
+.border-gold {
+  border: 2px solid #FFD700;
+}
+
+/* Card styles for sections */
+.card, .feature-card, .team-card {
+  background: #181818;
+  border: 2px solid #FFD700;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(212, 175, 55, 0.2);
+}
+.section {
+  padding: 60px 20px;
+}
+
+/* Fade-in animation for scroll effect */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: none; }
+}
+.fade-in {
+  opacity: 0;
+  animation: fade-in-up 1s forwards;
+}
+/* Global background and font */
+html, body {
+  background-color: #0A0A0A !important;
+  color: #F4E4C1 !important;   /* Light gold for default text */
+  font-family: 'Poppins', 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+/* Main headings: luxury gold and custom font */
+h1, h2, h3, h4, h5, h6 {
+  color: #FFD700 !important;        /* Metallic Gold */
+  font-family: 'Playfair Display', 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* Professional card style for black-gold cards */
+.card, .bg-card, .feature-card, .team-card {
+  background: #181818 !important;
+  border: 1px solid #FFD700 !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 4px 24px 0 rgba(240, 217, 104, 0.07);
+  color: #F4E4C1 !important;
+}
+
+/* Navigation bar: glass effect and gold accent */
+header, .navbar {
+  background: rgba(10,10,10,0.9) !important;
+  border-bottom: 2px solid #FFD700 !important;
+  backdrop-filter: blur(8px);
+}
+header a, .navbar a {
+  color: #fff !important;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 2px solid transparent;
+}
+header a:hover, .navbar a:hover {
+  color: #FFD700 !important;
+  border-bottom: 2px solid #FFD700 !important;
+}
+
+/* Buttons: gold gradient, glow, hover effects */
+button, .btn, .cta {
+  background: linear-gradient(90deg, #FFD700 0, #D4AF37 100%) !important;
+  color: #0A0A0A !important;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  box-shadow: 0 2px 14px 0 #FFD70044;
+  transition: background 0.2s, color 0.2s, transform 0.18s;
+}
+button:hover, .btn:hover, .cta:hover {
+  background: #0A0A0A !important;
+  color: #FFD700 !important;
+  border: 2px solid #FFD700 !important;
+  transform: scale(1.05);
+}
+
+/* Stats: Big Metallic Gold numbers */
+.stat-number, .count, .stat {
+  color: #FFD700 !important;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Testimonial quotes */
+.testimonial {
+  font-style: italic;
+  color: #FFEFC1 !important;
+  border-left: 4px solid #FFD700;
+  padding-left: 1rem;
+  margin: 1.2rem 0;
+}
+
+blockquote {
+  color: #FFEFC1 !important;
+  border-left: 4px solid #FFD700;
+  padding-left: 1rem;
+}
+
+/* Team avatars: gold border ring */
+.team-card .avatar, .avatar {
+  border: 4px solid #FFD700;
+  border-radius: 999px;
+  background: #222;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+}
+
+/* Section backgrounds for contrast */
+.section-dark {
+  background: #181818 !important;
+}
+
+.section-alt {
+  background: #232323 !important;
+}
+
+footer {
+  background: #111 !important;
+  color: #BFAF7F !important;
+  border-top: 1.5px solid #FFD700;
+}
+
+/* Premium scrollbar for showcase */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFD700;
+  border-radius: 4px;
+}
+
+/* Subtle fade-in animation */
+.fadein {
+  opacity: 0;
+  animation: fadein 1.1s forwards;
+}
+
+@keyframes fadein {
+  to { opacity: 1; }
+}
