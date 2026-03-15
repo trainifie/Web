@@ -1,164 +1,81 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Customize scrollbar */
+@layer base {
+  :root {
+    --gold-primary: #C5A059;
+    --gold-light: #EAD09F;
+    --bg-black: #050505;
+    --bg-lighter: #0F1115;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-[#050505] text-slate-200 font-sans antialiased overflow-x-hidden;
+    background-image: radial-gradient(circle at 50% -20%, #172554 0%, #050505 70%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 py-24 md:py-32;
+  }
+
+  .glass-card {
+    @apply bg-white/[0.03] border border-white/[0.08] backdrop-blur-sm rounded-2xl transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    @apply border-white/[0.15] bg-white/[0.05] shadow-2xl;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3.5 bg-[#C5A059] text-black font-bold rounded-full transition-all duration-300 hover:bg-[#EAD09F] hover:scale-[1.02] active:scale-95 shadow-lg shadow-[#C5A059]/10;
+  }
+
+  .btn-outline {
+    @apply px-8 py-3.5 border border-white/20 text-white font-bold rounded-full transition-all duration-300 hover:bg-white/5 hover:border-white/40 hover:scale-[1.02] active:scale-95;
+  }
+
+  .nav-blur {
+    @apply fixed top-0 w-full z-50 border-b border-white/[0.05] bg-black/70 backdrop-blur-xl;
+  }
+
+  .subtitle-text {
+    @apply text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl;
+  }
+}
+
+/* Custom Scrollbar - Professional & Subtle */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-[#050505];
 }
 ::-webkit-scrollbar-thumb {
-  background: #D4AF37; /* Gold */
-  border-radius: 4px;
+  @apply bg-slate-800 border-2 border-[#050505] rounded-full hover:bg-slate-700;
 }
 
-/* Gold accents for buttons and shadows */
-.shadow-gold {
-  box-shadow: 0 4px 20px #FFD70055;
-}
-.border-gold {
-  border: 2px solid #FFD700;
-}
-
-/* Card styles for sections */
-.card, .feature-card, .team-card {
-  background: #181818;
-  border: 2px solid #FFD700;
-  border-radius: 1rem;
-  box-shadow: 0 4px 24px rgba(212, 175, 55, 0.2);
-}
-.section {
-  padding: 60px 20px;
-}
-
-/* Fade-in animation for scroll effect */
-@keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: none; }
-}
-.fade-in {
+/* Animations */
+.fade-up {
   opacity: 0;
-  animation: fade-in-up 1s forwards;
-}
-/* Global background and font */
-html, body {
-  background-color: #0A0A0A !important;
-  color: #F4E4C1 !important;   /* Light gold for default text */
-  font-family: 'Poppins', 'Inter', sans-serif;
-  scroll-behavior: smooth;
-}
-/* Main headings: luxury gold and custom font */
-h1, h2, h3, h4, h5, h6 {
-  color: #FFD700 !important;        /* Metallic Gold */
-  font-family: 'Playfair Display', 'Cinzel', serif;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease-out forwards;
 }
 
-/* Professional card style for black-gold cards */
-.card, .bg-card, .feature-card, .team-card {
-  background: #181818 !important;
-  border: 1px solid #FFD700 !important;
-  border-radius: 1rem !important;
-  box-shadow: 0 4px 24px 0 rgba(240, 217, 104, 0.07);
-  color: #F4E4C1 !important;
-}
-
-/* Navigation bar: glass effect and gold accent */
-header, .navbar {
-  background: rgba(10,10,10,0.9) !important;
-  border-bottom: 2px solid #FFD700 !important;
-  backdrop-filter: blur(8px);
-}
-header a, .navbar a {
-  color: #fff !important;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: color 0.2s, border-bottom 0.2s;
-  border-bottom: 2px solid transparent;
-}
-header a:hover, .navbar a:hover {
-  color: #FFD700 !important;
-  border-bottom: 2px solid #FFD700 !important;
-}
-
-/* Buttons: gold gradient, glow, hover effects */
-button, .btn, .cta {
-  background: linear-gradient(90deg, #FFD700 0, #D4AF37 100%) !important;
-  color: #0A0A0A !important;
-  font-weight: 600;
-  border: none;
-  border-radius: 999px;
-  box-shadow: 0 2px 14px 0 #FFD70044;
-  transition: background 0.2s, color 0.2s, transform 0.18s;
-}
-button:hover, .btn:hover, .cta:hover {
-  background: #0A0A0A !important;
-  color: #FFD700 !important;
-  border: 2px solid #FFD700 !important;
-  transform: scale(1.05);
-}
-
-/* Stats: Big Metallic Gold numbers */
-.stat-number, .count, .stat {
-  color: #FFD700 !important;
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-/* Testimonial quotes */
-.testimonial {
-  font-style: italic;
-  color: #FFEFC1 !important;
-  border-left: 4px solid #FFD700;
-  padding-left: 1rem;
-  margin: 1.2rem 0;
-}
-
-blockquote {
-  color: #FFEFC1 !important;
-  border-left: 4px solid #FFD700;
-  padding-left: 1rem;
-}
-
-/* Team avatars: gold border ring */
-.team-card .avatar, .avatar {
-  border: 4px solid #FFD700;
-  border-radius: 999px;
-  background: #222;
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1rem;
-}
-
-/* Section backgrounds for contrast */
-.section-dark {
-  background: #181818 !important;
-}
-
-.section-alt {
-  background: #232323 !important;
-}
-
-footer {
-  background: #111 !important;
-  color: #BFAF7F !important;
-  border-top: 1.5px solid #FFD700;
-}
-
-/* Premium scrollbar for showcase */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-thumb {
-  background: #FFD700;
-  border-radius: 4px;
-}
-
-/* Subtle fade-in animation */
-.fadein {
-  opacity: 0;
-  animation: fadein 1.1s forwards;
-}
-
-@keyframes fadein {
-  to { opacity: 1; }
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
